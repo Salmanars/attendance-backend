@@ -13,14 +13,33 @@ Backend application built with **NestJS**, **Prisma ORM**, and **MySQL** for the
 
 ---
 
+## 📊 Entity Relationship Diagram (ERD)
+
+![ERD Diagram](./erd.png)
+
+---
+
 ## 🛠️ Getting Started
 
 ### 1. Prerequisites
 Pastikan Anda telah menginstal:
 * Node.js (v18+ direkomendasikan)
 * MySQL / XAMPP / Laragon
+* Git
 
-### 2. Environment Variables
+### 2. Installation
+
+\\\ash
+# 1. Clone the repository
+git clone https://github.com/Salmanars/attendance-backend.git
+
+# 2. Navigate to project directory
+cd attendance-backend
+
+# 3. Install dependencies
+npm install
+\\\`n
+### 3. Environment Variables
 Buat file \.env\ di root direktori proyek berdasarkan contoh berikut:
 
 \\\env
@@ -31,23 +50,18 @@ JWT_SECRET="CHANGETHISPLEASE"
 # PORT
 PORT=9000
 \\\`n
-### 3. Installation & Database Migration
-Instal dependensi dan lakukan sinkronisasi database menggunakan Prisma:
-
+### 4. Database Migration & Seed
 \\\ash
-# Instal dependensi
-npm install
-
 # Generate Prisma Client (Prisma v7)
 npx prisma generate
 
-# Dorong skema ke database
+# Push schema to MySQL database
 npx prisma db push
 
-# Jalankan seeder untuk data awal
+# Seed initial data (HRD & 15 Employees)
 npx prisma db seed
 \\\`n
-### 4. Running the Application
+### 5. Running the Application
 
 \\\ash
 # Development mode
